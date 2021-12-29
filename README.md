@@ -15,15 +15,26 @@ brew install riscv-tools
 
 ### Compile and build xv6
 cd xv6-riscv
+make clean
 make
 
 ## Running xv6
-### To start xv6 on qemu
+### To start xv6 on qemu and run commands
 cd xv6-riscv
 make qemu
+$ls
+$iocount
 
 ### To exit from xv6 terminal
 ctrl+A X
 
-## Changes to be made to xv6 code
-### Add a system call getiocount() in the xv6 kernel
+## Changes made to xv6 code
+### Added a system call getiocount() in the xv6 kernel
+#### Files modified:
+Makefile
+kernel/sysproc.c
+kernel/sysfile.c
+kernel/syscall.c
+kernel/syscall.h
+user/user.h
+user/usys.pl
